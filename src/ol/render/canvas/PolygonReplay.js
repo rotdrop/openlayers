@@ -41,7 +41,7 @@ class CanvasPolygonReplay extends CanvasReplay {
     for (let i = 0; i < numEnds; ++i) {
       const end = ends[i];
       const myBegin = this.coordinates.length;
-      const myEnd = this.appendFlatCoordinates(flatCoordinates, offset, end, stride, true, !stroke);
+      const myEnd = this.appendFlatCoordinates(flatCoordinates, offset, end, stride, !stroke, false);
       const moveToLineToInstruction = [CanvasInstruction.MOVE_TO_LINE_TO, myBegin, myEnd];
       this.instructions.push(moveToLineToInstruction);
       this.hitDetectionInstructions.push(moveToLineToInstruction);
